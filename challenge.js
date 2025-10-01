@@ -6,11 +6,6 @@ function priceOfBook(bookName) {
   // write your code here
 }
 
-
-
-
-
-
 function findBookByGenre(genre) {
   // write your code here
 }
@@ -18,6 +13,42 @@ function findBookByGenre(genre) {
 function groupByGenre() {
   // write your code here
 }
+
+function affordableBooks(budget) {
+  let affordable = [];
+
+  for (let i = 0; i < books.length; i++){
+    if(books[i].price <= budget){
+      affordable.push(books[i]);
+    }
+  }
+  return affordable;
+}
+
+// Read input from the user (budget)
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  rl.question("Enter your Budget:", (answer) => {
+    const budget = parseFloat(answer);
+    if (isNaN(budget)){
+      console.log("please Enter a valid Number!!")
+    }else{
+      const affordableBooksList = affordableBooks(budget);
+    
+
+    if (affordableBooksList.length > 0) {
+      console.log(`\nBooks within your budget: ${budget}$`);
+      for (let i = 0; i < affordableBooksList.length; i++) {
+        console.log(`${affordableBooksList[i].title} - ${affordableBooksList[i].price}$`);
+      }
+    }else{
+      console.log("There are no books available with your budget!! :(");
+    }
+  }
+  });
 
 function sortBooksByPrice() {
   let booksLen = books.length;
