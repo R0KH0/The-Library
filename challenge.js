@@ -8,9 +8,9 @@ function priceOfBook(bookName) {
 function affordableBooks(budget) {
   // write your code here
 }
-
+  // My New Line done By m_H
 function findBookByGenre(genre) {
-  // write your code here
+    return books.filter(({ genres }) => genres.some(g => g === genre));
 }
 
 function groupByGenre() {
@@ -34,6 +34,14 @@ function sortBooksByPrice() {
 const sortedBooks = sortBooksByPrice();
 for (let i = 0; i <sortedBooks.length; i++){
   console.log(sortedBooks[i].title + " " + sortedBooks[i].price + "$");
+  
+  // My New Line done By m_H
+  for (let i = 0; i < sortedBooks.length; i++){
+    console.log(
+      sortedBooks[i].title + " " + sortedBooks[i].price + "$" + " | Genres: " + sortedBooks[i].genres.join(", ")
+    );
+  }
+  
 }
 
 
