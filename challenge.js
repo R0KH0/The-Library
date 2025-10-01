@@ -1,16 +1,18 @@
 const books = require("./books.json");
+const readline = require("readline");
 
 function priceOfBook(bookName) {
   
   // write your code here
 }
 
-function affordableBooks(budget) {
-  // write your code here
-}
-  // My New Line done By m_H
+
+
+
+
+
 function findBookByGenre(genre) {
-    return books.filter(({ genres }) => genres.some(g => g === genre));
+  // write your code here
 }
 
 function groupByGenre() {
@@ -34,18 +36,10 @@ function sortBooksByPrice() {
 const sortedBooks = sortBooksByPrice();
 for (let i = 0; i <sortedBooks.length; i++){
   console.log(sortedBooks[i].title + " " + sortedBooks[i].price + "$");
-  
-  // My New Line done By m_H
-  for (let i = 0; i < sortedBooks.length; i++){
-    console.log(
-      sortedBooks[i].title + " " + sortedBooks[i].price + "$" + " | Genres: " + sortedBooks[i].genres.join(", ")
-    );
-  }
-  
 }
 
 
-(function main() {
+/*(function main() {
   try {
     if (priceOfBook("The Alchemist") !== 9.49) {
       throw new Error("priceOfBook is not working properly.");
@@ -66,7 +60,7 @@ for (let i = 0; i <sortedBooks.length; i++){
   } catch (error) {
     console.log(error);
   }
-})();
+})();*/
 
 
 
